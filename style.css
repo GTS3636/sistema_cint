@@ -1,0 +1,198 @@
+/* Declaração de variáveis no escopo global */
+:root {
+    --primary: #ff6f61;
+    --secondary: #4a90e2;
+    --accent: #ffe066;
+    --bg: #f5f5f5;
+    --text: #333;
+}
+
+/* Global Styles */
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    cursor: crosshair;
+}
+
+/* Header with animated gradient */
+header {
+    background: linear-gradient(-45deg, var(--primary), var(--secondary), var(--accent));
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    text-align: center;
+    padding: 2rem;
+    top: 0;
+    z-index: 100;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s;
+}
+
+header h1:hover {
+    transform: scale(1.1) rotate(-2deg);
+}
+
+header h4 {
+    color: white;
+    font-weight: normal;
+    margin-top: 0.5rem;
+    opacity: 0.9;
+}
+
+/* Main content styling */
+main {
+    padding: 2rem;
+    max-width: 800px;
+    margin: auto;
+}
+
+h3 {
+    color: var(--primary);
+    position: relative;
+    animation: fadeIn 1s ease;
+}
+
+h3::after {
+    content: '';
+    width: 50px;
+    height: 4px;
+    background: var(--secondary);
+    display: block;
+    margin-top: 5px;
+    border-radius: 2px;
+}
+
+h4 {
+    color: var(--secondary);
+    margin-top: 1.5rem;
+}
+
+p {
+    margin-bottom: 1rem;
+    transition: transform 0.2s;
+}
+
+p:hover {
+    transform: translateX(5px);
+}
+
+/* Interactive list items */
+ol li {
+    margin-bottom: 0.8rem;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+    padding: 0.5rem;
+    border-radius: 5px;
+}
+
+ol li:hover {
+    background: var(--accent);
+    transform: scale(1.05);
+}
+
+/* Styled horizontal rule */
+hr {
+    border: none;
+    height: 2px;
+    background: var(--secondary);
+    margin: 2rem 0;
+    transform: rotate(0deg);
+    transition: transform 0.5s;
+}
+
+hr:hover {
+    transform: rotate(1deg);
+}
+
+/* Plano MASTER section */
+#planoMASTER {
+    text-align: center;
+    color: var(--accent);
+    font-size: 2rem;
+    animation: pulse 2s ease infinite;
+}
+
+#textoIncrivel {
+    font-size: 1.5rem;
+    animation: shake 0.5s ease infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+@keyframes shake {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-5px);
+    }
+
+    75% {
+        transform: translateX(5px);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: #eee;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--secondary);
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary);
+}
